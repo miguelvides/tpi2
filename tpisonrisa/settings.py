@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tpisonrisa.Apps.administracion',
     'tpisonrisa.Apps.tablas',
+    'tpisonrisa.Apps.voluntario',
 ]
 
 MIDDLEWARE = [
