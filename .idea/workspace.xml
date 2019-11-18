@@ -2,9 +2,216 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92678044-5c35-4383-897e-690f8ff539af" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Bootstrap-4-4.1.1/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Bootstrap-4-4.1.1/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Bootstrap-4-4.1.1/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Bootstrap-4-4.1.1/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Bootstrap-4-4.1.1/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Bootstrap-4-4.1.1/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/css/buttons.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/css/buttons.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/css/buttons.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/css/buttons.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/css/buttons.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/css/buttons.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/css/buttons.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/css/buttons.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/css/buttons.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/css/buttons.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/css/buttons.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/css/buttons.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/css/common.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/css/mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.colVis.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.colVis.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.flash.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.flash.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.html5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.html5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.print.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.print.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/buttons.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/dataTables.buttons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/js/dataTables.buttons.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Buttons-1.6.1/swf/flashExport.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/css/dataTables.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/css/dataTables.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/css/dataTables.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/css/dataTables.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/css/dataTables.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/css/dataTables.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/css/dataTables.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/css/dataTables.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/css/dataTables.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/css/dataTables.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/css/jquery.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/css/jquery.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/images/sort_asc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/images/sort_asc_disabled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/images/sort_both.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/images/sort_desc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/images/sort_desc_disabled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/js/dataTables.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/js/dataTables.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/js/dataTables.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/js/dataTables.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/js/dataTables.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/js/dataTables.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/js/dataTables.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/js/dataTables.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/js/dataTables.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/js/dataTables.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/js/jquery.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables-1.10.20/js/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/DataTables.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/css/responsive.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/css/responsive.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/css/responsive.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/css/responsive.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/css/responsive.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/css/responsive.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/css/responsive.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/css/responsive.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/css/responsive.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/css/responsive.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/css/responsive.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/css/responsive.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/js/dataTables.responsive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/js/dataTables.responsive.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/js/responsive.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/js/responsive.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/js/responsive.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/js/responsive.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/js/responsive.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/js/responsive.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/js/responsive.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/js/responsive.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/js/responsive.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/Responsive-2.2.3/js/responsive.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/css/rowGroup.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/css/rowGroup.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/css/rowGroup.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/css/rowGroup.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/css/rowGroup.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/css/rowGroup.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/css/rowGroup.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/css/rowGroup.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/css/rowGroup.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/css/rowGroup.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/css/rowGroup.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/css/rowGroup.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/js/dataTables.rowGroup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/js/dataTables.rowGroup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/js/rowGroup.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/js/rowGroup.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/js/rowGroup.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/js/rowGroup.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/js/rowGroup.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/js/rowGroup.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/js/rowGroup.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/js/rowGroup.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/js/rowGroup.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/js/rowGroup.semanicui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/js/rowGroup.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/RowGroup-1.1.1/js/rowGroup.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/dataTables.buttons.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/dataTables.editor.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/dataTables.select.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/datatables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/datatables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/datatables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/datatables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/jQuery-3.3.1/jquery-3.3.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/jQuery-3.3.1/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/jquery.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/media/images/Sorting icons.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/media/images/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/media/images/sort_asc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/media/images/sort_asc_disabled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/media/images/sort_both.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/media/images/sort_desc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/media/images/sort_desc_disabled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/select.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/tabla.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/bootstrap-4.3.1-dist/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/datatables/Spanish.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/datatables/datatables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/datatables/datatables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/jQuery/jquery-3.4.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/addons/datatables-select.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/addons/datatables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/addons/directives.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/addons/flag.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/addons/imagesloaded.pkgd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/addons/jquery.zmd.hierarchical-display.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/addons/masonry.pkgd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/addons/rating.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/mdb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/mdb.lite.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/mdb.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/modules/animations-extended.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/modules/forms-free.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/modules/scrolling-navbar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/modules/treeview.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/modules/wow.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/popper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/js/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/toast/jquery.toast.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/toast/jquery.toast.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/aspirante/aspirante.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/aspirante/aspirante2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/aspirante/edtAspirante.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/aspirante/evento.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/aspirante/eventoAspirantes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/aspirante/pBoostrap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/aspirante/prueba.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/taller/detalleTaller.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/visita/eventoVoluntarios.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tablas/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tablas/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/tablas/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/tablas/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpisonrisa/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpisonrisa/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,10 +236,15 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="tpisonrisa" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -42,14 +254,21 @@
   <component name="ProjectId" id="1T7lkRDWwRj6CQ3JO0E1Zs6iS08" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tablas" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Carlos\Desktop\tpisonrisa\tablas" />
+      <recent name="C:\Users\Carlos\Desktop\tpisonrisa\tpisonrisa\Apps\administracion\static\DATA" />
+      <recent name="C:\Users\Carlos\Desktop\tpisonrisa\tpisonrisa\Apps\administracion\templates\taller" />
+      <recent name="C:\Users\Carlos\Desktop\tpisonrisa\tpisonrisa\Apps\administracion\templates\visita" />
+      <recent name="C:\Users\Carlos\Desktop\tpisonrisa\tpisonrisa\Apps\administracion\templates\aspirante" />
+      <recent name="C:\Users\Carlos\Desktop\tpisonrisa\tpisonrisa\Apps\administracion\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -64,7 +283,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.tests">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tpisonrisa" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -79,6 +298,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tpisonrisa/Apps/tablas/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="tpisonrisa" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tpisonrisa/Apps/administracion" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tpisonrisa/Apps/administracion/tests.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -112,6 +353,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.tests" />
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
@@ -128,7 +370,17 @@
       <updated>1572819157636</updated>
       <workItem from="1572819160319" duration="1342000" />
       <workItem from="1573397259789" duration="3358000" />
-      <workItem from="1573404776586" duration="1615000" />
+      <workItem from="1573404776586" duration="3283000" />
+      <workItem from="1573425823139" duration="307000" />
+      <workItem from="1573657192954" duration="21716000" />
+      <workItem from="1573687489821" duration="12501000" />
+      <workItem from="1573748380831" duration="16109000" />
+      <workItem from="1573789822999" duration="9664000" />
+      <workItem from="1573872722632" duration="9442000" />
+      <workItem from="1573913449615" duration="36615000" />
+      <workItem from="1573973069705" duration="3938000" />
+      <workItem from="1574007394763" duration="13801000" />
+      <workItem from="1574117392830" duration="1311000" />
     </task>
     <servers />
   </component>
@@ -140,24 +392,21 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tpisonrisa/Apps/tablas/test.py</url>
-          <line>4</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/prjsonrisa" />
+    </ignored-roots>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/tpisonrisa$test.coverage" NAME="test Coverage Results" MODIFIED="1573406491632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tpisonrisa/Apps/tablas" />
+    <SUITE FILE_PATH="coverage/tpisonrisa$test.coverage" NAME="test Coverage Results" MODIFIED="1573406563214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tpisonrisa/Apps/tablas" />
+    <SUITE FILE_PATH="coverage/tpisonrisa$tests.coverage" NAME="tests Coverage Results" MODIFIED="1573799013201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tpisonrisa/Apps/administracion" />
   </component>
 </project>

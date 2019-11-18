@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Voluntario</title>
+    {% load static %}
+
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'toast/jquery.toast.min.css' %}">
+    <script src="{% static 'toast/jquery.toast.min.js' %}"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#ocultar").hide();
+
+            $("#show").click(function () {
+                $("#ocultar").hide();
+
+                //console.log("-------------");
+                //console.log(jsonObj);
+                var valores = {
+                    sonrisero: $("#sonrisero").val(),
+                    generacion: $("#generacion").val(),
+                    tipo: $("#tipo").val(),
+                    constelacion: $("#constelacion").val()
+                }
+                console.log(valores);
+
+                $.ajax({
+                    url: "/administracion/aspirante/create/",
+                    type: 'post',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    data: JSON.stringify(valores),
+                    success: function (data, textStatus, xhr) {
+                        console.log(xhr.status);
+                        console.log("sucesss");
+                    },
+                    complete: function (xhr, textStatus) {
+                        console.log(xhr.status);
+                        if (xhr.status == 302){
+                            console.log("Nombre Sonrisero no disponible");
+                        }
+                        if (xhr.status == 400){
+                            console.log("Completar formulario")
+                        }
+                        if (xhr.status == 201){
+                            console.log("Elemento actualizado")
+                        }
+                        console.log("complete");
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+<div class="container" style="margin-top:30px">
+
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title"><strong>Formulario Voluntario</strong></h3>
+            </div>
+
+            <div class="panel-body">
+
+                <form role="form" method="post">{% csrf_token %}
+                    <div id="ocultar" class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#">×</a>Nombre Sonrisero no disponible
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <p>Nombre</p>
+                                <input type="text" name="password" id="nombre" class="form-control "
+                                       placeholder="{{ dato.nombremortal }}" tabindex="5" disabled>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <p>Correo</p>
+                                <input type="email" name="password_confirmation" id="correo"
+                                       class="form-control " placeholder="{{ dato.correo }}" tabindex="6" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <p>DUI</p>
+                                <input type="text" name="password" id="dui" class="form-control "
+                                       placeholder="{{ dato.dui }}" tabindex="5" disabled>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <p>Telefono</p>
+                                <input type="text" name="password_confirmation" id="telefono"
+                                       class="form-control " placeholder="{{ dato.telefono }}" tabindex="6" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <p>Nombre Sonrisero</p>
+                                <input type="text" id="sonrisero" name="sonrisero" class="form-control "
+                                       placeholder="" tabindex="5">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <p>Generacion</p>
+                                <input type="number" min="0" id="generacion"
+                                       class="form-control " placeholder="" tabindex="6">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <p>Tipo de Usuario</p>
+                                <select class="form-control" id="tipo">
+                                    {% for tip in tipo %}
+                                        <option value="{{ tip.descripcion }}">{{ tip.descripcion }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <p>Constelacion</p>
+                                <select class="form-control" id="constelacion">
+                                    {% for con in constelacion %}
+                                        <option value="{{ con.descripcionconstelacion }}">{{ con.descripcionconstelacion }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <button type="button" class="btn btn-success" id="hide">ENVIAR</button>
+                    <button type="button" class="btn btn-success" id="show">Mostrar</button>
+
+                    <hr style="margin-top:10px;margin-bottom:10px;">
+
+                    <div class="form-group">
+
+                        <div style="font-size:85%">
+                            Don't have an account!
+                            <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                Sign Up Here
+                            </a>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function createJSON() {
+        jsonObj = [];
+        var v1 = $(this).attr("sonrisero");
+        var v2 = $(this).attr("generacion");
+        item = {}
+        item ["nombresonrisero"] = v1;
+        item ["generacion"] = v2;
+        jsonObj.push(item);
+        console.log(jsonObj);
+    }
+</script>
+
+</body>

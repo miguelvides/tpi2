@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Peticion de Visitas</title>
+    {% load static %}
+
+
+    <script type="text/javascript" src="{% static 'DATA/jQuery-3.3.1/jquery-3.3.1.min.js' %}"></script>
+
+
+    <script type="text/javascript" src="{% static 'DATA/Bootstrap-4-4.1.1/js/bootstrap.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static  'DATA/Bootstrap-4-4.1.1/css/bootstrap.css' %}"/>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'DATA/tabla.css' %}"/>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'DATA/datatables.min.css' %}"/>
+    <script type="text/javascript" src="{% static 'DATA/datatables.min.js' %}"></script>
+
+    <!--
+<script type="text/javascript" src="{% static 'DATA/jquery.dataTables.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'DATA/jquery.dataTables.min.css' %}"/>
+    -->
+    <script type="text/javascript" src="{% static 'DATA/dataTables.select.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'DATA/jquery.dataTables.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'DATA/jquery.dataTables.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'DATA/select.dataTables.min.css' %}"/>
+
+
+</head>
+<body>
+
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Control <b>Visitas</b></h2>
+                </div>
+                <div class="col-sm-6">
+                    <input id="btnEditar" type="button" class="btn btn-success" data-toggle="modal" href="#update"
+                           data-dismiss="modal" value="Cambiar Estado">
+                </div>
+            </div>
+        </div>
+        <table id="example" class="table table-striped table-striped" style="width:100%">
+            <thead>
+            <tr>
+                <th>Entidad</th>
+                <th>Solicitante</th>
+                <th>Email</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Ubicacion</th>
+                <th>Estado</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th>Entidad</th>
+                <th>Solicitante</th>
+                <th>Email</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Ubicacion</th>
+                <th>Estado</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<div id="update" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post"> {% csrf_token %}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <p>Estado de Solicitud</p>
+                        <select class="form-control" id="estado" name="estado">
+                            {% for l in lista %}
+                                <option value="{{ l.descripcionestado }}">{{ l.descripcionestado }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group" id="ocultar">
+                        <input type="text" id="nombre" name="nombre" class="form-control ">
+                        <input type="text" id="lugar" name="lugar" class="form-control ">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                    <input type="submit" id="actualizar" class="btn btn-info" value="Actualizar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#btnEditar").attr("disabled", true);
+        //CARGAR TABLA
+        $.ajax({
+            url: "/administracion/eventosDisponibles/",
+            type: 'get',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data, textStatus, xhr) {
+                console.log(data)
+                llenarTabla(data)
+            },
+            complete: function (xhr, textStatus) {
+                console.log(xhr.status);
+            }
+        });
+        var table;
+
+        function llenarTabla(datos) {
+            table = $('#example').DataTable({
+                data: datos,
+                lengthMenu: [10, 25, 50],
+                responsive: true,
+                select: {
+                    style: 'single'
+                },
+                language: {
+                    url: "{% static 'datatables/Spanish.json' %}"
+                }
+            });
+
+            $('#example tbody').on('click', 'tr', function () {
+                var valores = table.row(this).data();
+                $("#nombre").val(valores[1]);
+                $("#lugar").val(valores[5]);
+                $("#btnEditar").removeAttr("disabled");
+                $("#ocultar").hide();
+            });
+        }
+
+
+    });
+</script>
+</body>
+</html>

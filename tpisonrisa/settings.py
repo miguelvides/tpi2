@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'tpisonrisa.Apps.administracion',
     'tpisonrisa.Apps.tablas',
     'tpisonrisa.Apps.voluntario',
+    'rest_framework',
+
 ]
 
 MIDDLEWARE = [
