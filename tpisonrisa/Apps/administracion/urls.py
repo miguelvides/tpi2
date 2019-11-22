@@ -6,14 +6,18 @@ urlpatterns = [
     # path('administrador/', admin.site.urls),
     path('', views.index, name='index'),
     path('aspirante/', views.aspirante, name='aspirante'),
+    path('evento/', views.listadoEvento, name='eventos'),
+    path('detalleEvento/', views.eventosVoluntarios, name='eventosVoluntarios'),
+    path('detalleTaller/', views.detalleTaller, name='detalleTaller'),
+    path('recursos/', views.crudRecurso, name='recursos'),
+
+
     path('aspirante/<int:id>/', views.detail, name='detail'),
     path('bs/', views.boostrap, name='detail'),
 
-    path('eventos/', views.listadoEvento, name='eventos'),
-    path('eventos/voluntarios', views.eventosVoluntarios, name='eventosVoluntarios'),
     path('eventosDisponibles/', views.eventosDisponibles, name='eventosDisponibles'),
     path('talleresDisponibles/', views.talleresDisponibles, name='talleresDisponibles'),
-    path('detalleTaller/', views.detalleTaller, name='detalleTaller'),
+
 
     # LISTADO JSON
     # Aspirantes sin nombre sonrisero

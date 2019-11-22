@@ -10,11 +10,12 @@ from django.http import Http404
 from django.db import connection
 from django.http import JsonResponse
 
+
 @api_view(['GET', ])
 def listadoAspirante(request):
     try:
         lista = Usuario.objects.filter(nombresonrisero__isnull=True)
-        #lista = Usuario.objects.all()
+        # lista = Usuario.objects.all()
     except Usuario.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
     if request.method == "GET":
@@ -58,7 +59,7 @@ def delete_aspirante(request):
 
 @api_view(['POST', ])
 def post_aspirante(request):
-    #cuenta = Usuario.objects.get(idusuario=2)
+    # cuenta = Usuario.objects.get(idusuario=2)
     if request.method == "POST":
         # serializer = ListaUsuarioSerializer(cuenta, data=request.data)
         serializer = campos_Usuario(data=request.data)
@@ -78,10 +79,10 @@ def post_aspirante(request):
 
 def eventosVoluntarios(request):
     cursor = connection.cursor()
-    cursor.execute("SELECT d.iddetalle, p.lugardevisita, p.horavisita, p.fechavisita, u.nombresonrisero "
-                   "FROM detallevisita as d INNER JOIN usuario as u USING(idusuario) "
-                   "INNER JOIN peticionvisita as p USING(idpeticionvisita) "
-                   "WHERE p.idestado = 2 ORDER BY p.lugardevisita ASC")
+    cursor.execute("SELECT p.lugardevisita, p.horavisita, p.fechavisita, p.descripcion ,u.nombresonrisero, es.descripcionestado, es.idestado "
+                   "FROM detallevisita as d INNER JOIN usuario as u "
+                   "USING(idusuario) INNER JOIN peticionvisita as p "
+                   "USING(idpeticionvisita) INNER JOIN estado as es USING (idestado) ORDER BY p.lugardevisita ASC")
     lista = cursor.fetchall()
     cursor.close()
     context = {
@@ -89,7 +90,12 @@ def eventosVoluntarios(request):
     }
     return render(request, 'visita/eventoVoluntarios.html', context)
 
+
 def detalleTaller(request):
+    if request.method == 'POST':
+        id = request.POST.get('idestado')
+        Detalletaller.objects.filter(iddetalletaller=id).update(pago=1)
+
     cursor = connection.cursor()
     cursor.execute("SELECT d.iddetalletaller, ta.nombretaller, ta.descripcion, ta.fecha, u.nombresonrisero, d.pago "
                    "FROM detalletaller AS d INNER JOIN taller AS ta USING (idtaller) "
@@ -99,28 +105,27 @@ def detalleTaller(request):
     context = {
         'lista': lista
     }
-    if request.method == 'POST':
-        id = request.POST.get('idestado')
-        Detalletaller.objects.filter(iddetalletaller=id).update(pago=1)
-
     return render(request, 'taller/detalleTaller.html', context)
 
+
 def listadoEvento(request):
-    lista = Estado.objects.all()
-    context = {
-        'lista': lista
-    }
     if request.method == 'POST':
-        estado = request.POST.get('estado')
-        nombre = request.POST.get('nombre')
-        lugar = request.POST.get('lugar')
-        estado = str(estado)
-        nombre = str(nombre)
-        lugar = str(lugar)
-        id = Estado.objects.filter(descripcionestado=str(estado))[0].idestado
-        Peticionvisita.objects.filter(nombrecontacto__icontains=nombre, lugardevisita__icontains=lugar).update(
-            idestado=id)
-    return render(request, 'aspirante/evento.html', context)
+        id = request.POST.get('idvisita')
+        estado = request.POST.get('e')
+        idestado = Estado.objects.filter(descripcionestado=str(estado))[0].idestado
+        Peticionvisita.objects.filter(idpeticionvisita=id).update(idestado=idestado)
+
+    cursor = connection.cursor()
+    cursor.execute("SELECT pe.idpeticionvisita, pe.entidad, pe.nombrecontacto, pe.correocontacto, "
+                   "pe.fechavisita, pe.horavisita, pe.lugardevisita, e.descripcionestado, e.idestado "
+                   "FROM peticionvisita AS pe INNER JOIN estado AS e USING (idestado)")
+    lista = cursor.fetchall()
+    estado = Estado.objects.all()
+    context = {
+        'lista': lista,
+        'estado': estado
+    }
+    return render(request, 'visita/evento.html', context)
 
 
 def talleresDisponibles(request):
@@ -131,6 +136,7 @@ def talleresDisponibles(request):
     lista = cursor.fetchall()
     cursor.close()
     return JsonResponse(lista, safe=False)
+
 
 def eventosDisponibles(request):
     cursor = connection.cursor()
@@ -193,3 +199,9 @@ def boostrap(request):
         'aspirante_list': filtro,
     }
     return render(request, 'aspirante/pBoostrap.html', context)
+
+def crudRecurso(request):
+    context = {
+        'aspirante_list': 0,
+    }
+    return render(request, 'recursos/recursos.html', context)

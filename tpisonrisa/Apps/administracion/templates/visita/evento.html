@@ -35,7 +35,7 @@
         <div class="table-title">
             <div class="row">
                 <div class="col-sm-6">
-                    <h2>Control <b>Visitas</b></h2>
+                    <h2>Control <b>Peticiones</b></h2>
                 </div>
                 <div class="col-sm-6">
                     <input id="btnEditar" type="button" class="btn btn-success" data-toggle="modal" href="#update"
@@ -46,6 +46,7 @@
         <table id="example" class="table table-striped table-striped" style="width:100%">
             <thead>
             <tr>
+                <th>ID</th>
                 <th>Entidad</th>
                 <th>Solicitante</th>
                 <th>Email</th>
@@ -55,8 +56,45 @@
                 <th>Estado</th>
             </tr>
             </thead>
+
+            {% for l in lista %}
+                <tr>
+                    <td>{{ l.0 }}</td>
+                    <td>{{ l.1 }}</td>
+                    <td>{{ l.2 }}</td>
+                    <td>{{ l.3 }}</td>
+                    <td>{{ l.4 }}</td>
+                    <td>{{ l.5 }}</td>
+                    <td>{{ l.6 }}</td>
+                    {% if l.8 == 1 %}
+                        <td>
+                            <span class="badge badge-pill badge-warning">{{ l.7 }}</span>
+                        </td>
+                    {% elif  l.8 == 2 %}
+                        <td>
+                            <span class="badge badge-pill badge-info">{{ l.7 }}</span>
+                        </td>
+                    {% elif  l.8 == 3 %}
+                        <td>
+                            <span class="badge badge-pill badge-danger">{{ l.7 }}</span>
+                        </td>
+                    {% elif  l.8 == 4 %}
+                        <td>
+                            <span class="badge badge-pill badge-dark">{{ l.7 }}</span>
+                        </td>
+                    {% else %}
+                        <td>
+                            <span class="badge badge-pill badge-primary">{{ l.7 }}</span>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% empty %}
+                <li>Disculpa, no existen detalle Taller.</li>
+            {% endfor %}
+            </tbody>
             <tfoot>
             <tr>
+                <th>ID</th>
                 <th>Entidad</th>
                 <th>Solicitante</th>
                 <th>Email</th>
@@ -78,14 +116,14 @@
                     <div class="form-group">
                         <p>Estado de Solicitud</p>
                         <select class="form-control" id="estado" name="estado">
-                            {% for l in lista %}
+                            {% for l in estado %}
                                 <option value="{{ l.descripcionestado }}">{{ l.descripcionestado }}</option>
                             {% endfor %}
                         </select>
                     </div>
                     <div class="form-group" id="ocultar">
-                        <input type="text" id="nombre" name="nombre" class="form-control ">
-                        <input type="text" id="lugar" name="lugar" class="form-control ">
+                        <input type="text" id="idvisita" name="idvisita" class="form-control ">
+                        <input type="text" id="e" name="e" class="form-control ">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -100,45 +138,30 @@
 <script>
     $(document).ready(function () {
         $("#btnEditar").attr("disabled", true);
-        //CARGAR TABLA
-        $.ajax({
-            url: "/administracion/eventosDisponibles/",
-            type: 'get',
-            dataType: 'json',
-            contentType: 'application/json',
-            success: function (data, textStatus, xhr) {
-                console.log(data)
-                llenarTabla(data)
+        table = $('#example').DataTable({
+            lengthMenu: [10, 25, 50],
+            responsive: true,
+            select: {
+                style: 'single'
             },
-            complete: function (xhr, textStatus) {
-                console.log(xhr.status);
+            language: {
+                url: "{% static 'datatables/Spanish.json' %}"
             }
         });
-        var table;
 
-        function llenarTabla(datos) {
-            table = $('#example').DataTable({
-                data: datos,
-                lengthMenu: [10, 25, 50],
-                responsive: true,
-                select: {
-                    style: 'single'
-                },
-                language: {
-                    url: "{% static 'datatables/Spanish.json' %}"
-                }
-            });
+        $('#example tbody').on('click', 'tr', function () {
+            var valores = table.row(this).data();
+            $("#idvisita").val(valores[0]);
+            $("#btnEditar").removeAttr("disabled");
+            $("#ocultar").hide();
+        });
 
-            $('#example tbody').on('click', 'tr', function () {
-                var valores = table.row(this).data();
-                $("#nombre").val(valores[1]);
-                $("#lugar").val(valores[5]);
-                $("#btnEditar").removeAttr("disabled");
-                $("#ocultar").hide();
-            });
-        }
-
-
+        var value = $("#estado").val();
+        $("#e").val(value);
+        $('#estado').change(function () {
+            var value = $(this).val();
+            $("#e").val(value);
+        });
     });
 </script>
 </body>

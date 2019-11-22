@@ -270,15 +270,8 @@
                     <td>{{ a.dui }}</td>
                     <td>{{ a.telefono }}</td>
                     <td>
-                        <!--
-                        <a href="{% url 'detail' a.idusuario %}" class="edit" data-toggle="modal"><i
-                                class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                        -->
                         <a href="#update" id="edit" class="edit" data-toggle="modal">
                             <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                        <a href="#delete" class="delete" data-toggle="modal"><i class="material-icons"
-                                                                                data-toggle="tooltip"
-                                                                                title="Delete">&#xE872;</i></a>
                     </td>
                 </tr>
             {% empty %}
@@ -298,6 +291,9 @@
         </table>
         <script>
             $(document).ready(function () {
+                $("#sonrisero").prop('required',true);
+                $("#generacion").prop('required',true);
+
                 var id;
                 $("#tabla tr").click(function () {
                     var currentRow = $(this).closest("tr");
@@ -345,6 +341,9 @@
                             if (xhr.status == 302) {
                                 $("#message").text("Nombre Sonrisero no disponible");
                                 console.log("Nombre Sonrisero no disponible");
+                                $("#sonrisero").val("");
+                                $("#sonrisero").focus();
+
                             }
                             if (xhr.status == 400) {
                                 $("#message").text("Completar formulario");

@@ -92,6 +92,9 @@
         var table;
         table = $('#example').DataTable({
             lengthMenu: [10, 25, 50],
+            rowGroup: {
+                dataSrc: 1
+            },
             responsive: true,
             select: {
                 style: 'single'
