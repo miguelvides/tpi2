@@ -9,6 +9,7 @@ from django.contrib import messages
 from django.http import Http404
 from django.db import connection
 from django.http import JsonResponse
+from .forms import registroForm
 
 
 @api_view(['GET', ])
@@ -205,3 +206,11 @@ def crudRecurso(request):
         'aspirante_list': 0,
     }
     return render(request, 'recursos/recursos.html', context)
+
+def registroAspirante(request):
+    if request.method == 'POST':
+        form = registroForm(request.POST)
+        if form.is_valid():
+            form.save()
+    form = registroForm()
+    return render(request, 'aspirante/registroAsp.html', {'form': form})
