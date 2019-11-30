@@ -5,4 +5,5 @@ from .Apps import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('administracion/', include('tpisonrisa.Apps.administracion.urls')),
+    path('voluntario/', include('tpisonrisa.Apps.voluntario.urls')),
 ]
