@@ -79,10 +79,11 @@ def post_aspirante(request):
 
 def eventosVoluntarios(request):
     cursor = connection.cursor()
-    cursor.execute("SELECT p.lugardevisita, p.horavisita, p.fechavisita, p.descripcion ,u.nombresonrisero, es.descripcionestado, es.idestado "
-                   "FROM detallevisita as d INNER JOIN usuario as u "
-                   "USING(idusuario) INNER JOIN peticionvisita as p "
-                   "USING(idpeticionvisita) INNER JOIN estado as es USING (idestado) ORDER BY p.lugardevisita ASC")
+    cursor.execute(
+        "SELECT p.lugardevisita, p.horavisita, p.fechavisita, p.descripcion ,u.nombresonrisero, es.descripcionestado, es.idestado "
+        "FROM detallevisita as d INNER JOIN usuario as u "
+        "USING(idusuario) INNER JOIN peticionvisita as p "
+        "USING(idpeticionvisita) INNER JOIN estado as es USING (idestado) ORDER BY p.lugardevisita ASC")
     lista = cursor.fetchall()
     cursor.close()
     context = {
@@ -117,7 +118,7 @@ def listadoEvento(request):
 
     cursor = connection.cursor()
     cursor.execute("SELECT pe.idpeticionvisita, pe.entidad, pe.nombrecontacto, pe.correocontacto, "
-                   "pe.fechavisita, pe.horavisita, pe.lugardevisita, e.descripcionestado, e.idestado "
+                   "pe.fechavisita, pe.horavisita, pe.lugardevisita, e.descripcionestado, e.idestado, pe.descripcion "
                    "FROM peticionvisita AS pe INNER JOIN estado AS e USING (idestado)")
     lista = cursor.fetchall()
     estado = Estado.objects.all()
@@ -158,9 +159,9 @@ def index(request):
 
 
 def aspirante(request):
-    if request.method == 'POST':
-        d = request.POST.get('c1')
-        print('Ey Carlos estoy aqui ' + str(d))
+    if 'Eliminar' in request.POST:
+        id = request.POST.get('idEliminar')
+        Usuario.objects.filter(idusuario=id).delete()
 
     filtro = Usuario.objects.filter(nombresonrisero__isnull=True)
     constelacion = Constelacion.objects.all().order_by('idconstelacion')
@@ -200,8 +201,47 @@ def boostrap(request):
     }
     return render(request, 'aspirante/pBoostrap.html', context)
 
+
 def crudRecurso(request):
+    if 'Agregar' in request.POST:
+        recurso = request.POST.get('recurso')
+        detalle = request.POST.get('detalle')
+        precio = request.POST.get('precio')
+        print(precio)
+        Recursosonriseros(nombrerecurso=recurso, talla=detalle, preciorecurso=precio).save()
+
+    if 'Editar' in request.POST:
+        print('ENTRO A EDITAR')
+        id = request.POST.get('id')
+        recurso = request.POST.get('recurso')
+        detalle = request.POST.get('detalle')
+        precio = request.POST.get('precio')
+        Recursosonriseros.objects.filter(idrecurso=id).update(nombrerecurso=recurso, talla=detalle, preciorecurso=precio)
+
+    if 'Eliminar' in request.POST:
+        print('ENTRO A ELIMINAR')
+        id = request.POST.get('id')
+        Recursosonriseros.objects.filter(idrecurso=id).delete()
+
+    recursos = Recursosonriseros.objects.all()
     context = {
-        'aspirante_list': 0,
+        'recursos': recursos,
     }
     return render(request, 'recursos/recursos.html', context)
+
+def detalleRecurso(request):
+    if request.method == 'POST':
+        id = request.POST.get('idestado')
+        Solicitudrecurso.objects.filter(idsolicitudrecurso=id).update(pago=1)
+
+    cursor = connection.cursor()
+    cursor.execute("SELECT so.idsolicitudrecurso, us.nombresonrisero, re.nombrerecurso, re.talla, so.pago "
+                   "FROM solicitudrecurso AS so "
+                   "INNER JOIN recursosonriseros AS re ON so.recursosonrisero = re.idrecurso "
+                   "INNER JOIN usuario AS us USING(idusuario)")
+    lista = cursor.fetchall()
+    cursor.close()
+    context = {
+        'lista': lista
+    }
+    return render(request, 'recursos/detalleRecurso.html', context)
