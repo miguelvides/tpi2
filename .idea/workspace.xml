@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92678044-5c35-4383-897e-690f8ff539af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/recursos/recursos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/aspirante/aspirante.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/aspirante/aspirante.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/aspirante/evento.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/visita/evento.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/taller/detalleTaller.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/taller/detalleTaller.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/visita/eventoVoluntarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/visita/eventoVoluntarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/views.py" afterDir="false" />
+    <list default="true" id="92678044-5c35-4383-897e-690f8ff539af" name="Default Changelist" comment="Formato de Tablas">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
