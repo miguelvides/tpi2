@@ -17,7 +17,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'DATA/select.dataTables.min.css' %}"/>
 </head>
 
+<header>{% include "NaviBar.html" %}</header>
 <body>
+
 <div class="container">
     <div class="table-wrapper">
         <div class="table-title">
@@ -37,7 +39,7 @@
                 <th>Fecha</th>
                 <th>Hora</th>
                 <th>Cupos</th>
-                <th>Inscripcion</th>
+
             </tr>
             </thead>
             <tbody>
@@ -51,7 +53,6 @@
                 <td>{{ l.5 }}</td>
                 <td>{{ l.6 }}</td>
                 <td>{{ l.7 }}</td>
-                <td> <input id="btnInscribir" type="button" class="btn btn-success" data-toggle="modal" href="#update" data-dismiss="modal" value="Inscribirse"></td>
 
             {% empty %}
                 <li>Disculpa, no hay taller.</li>
@@ -67,28 +68,10 @@
                 <th>Fecha</th>
                 <th>Hora</th>
                 <th>Cupos</th>
-                <th>Inscripcion</th>
             </tr>
             </tfoot>
 
         </table>
-    </div>
-</div>
-<div id="update" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form method="post"> {% csrf_token %}
-                <div class="modal-body">
-
-                    <!--Aqui se mostraria la descripcion del taller -->
-
-                </div>
-                <div class="modal-footer">
-                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                    <input type="submit" id="inscribir" class="btn btn-info" value="Inscribirse">
-                </div>
-            </form>
-        </div>
     </div>
 </div>
 

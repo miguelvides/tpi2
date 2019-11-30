@@ -51,6 +51,6 @@ def talleresInscrito(request):
     context = {
         'lista': lista
     }
-    return render(request, 'taller/inscripcionTaller.html', context)
+    return render(request, 'taller/tallerInscrito.html', context)
 
 
