@@ -4,9 +4,9 @@ from ..tablas.models import Peticionvisita
 class visitaForm(forms.ModelForm):
     class Meta:
         model = Peticionvisita
-        fields = ('nombrecontacto', 'correocontacto', 'lugardevisita', 'descripcion', 'fechavisita', 'horavisita')
+        fields = ('nombrecontacto', 'correocontacto', 'lugardevisita', 'entidad', 'descripcion', 'fechavisita', 'horavisita')
         labels = {
-            'nombrecontacto': 'Nombre', 'correocontacto': 'Correo', 'lugardevisita': 'Lugar de Visita',
+            'nombrecontacto': 'Nombre', 'correocontacto': 'Correo', 'lugardevisita': 'Lugar de Visita', 'entidad':'Tipo de entidad',
             'descripcion': 'Descripción - Dirección', 'fechavisita': 'Fecha de Visita', 'horavisita': 'Hora de Visita'
         }
         widgets = {
@@ -17,6 +17,9 @@ class visitaForm(forms.ModelForm):
             'lugardevisita': forms.TextInput(
                 attrs={'id': "lugar", 'class': "form-control",
                        'placeholder': "Ingrese el lugar que visitará Fabrica de Sonrisas", 'required': 'true'}),
+            'entidad': forms.TextInput(
+                attrs={'id': "entidad", 'class': "form-control",
+                       'placeholder': "Pública/Privada", 'required': 'true'}),
             'descripcion': forms.Textarea(
                 attrs={'id': "telefono", 'class': "form-control",
                        'placeholder': "Ingrese una descripción y/o dirección del lugar", 'required': 'true'}),

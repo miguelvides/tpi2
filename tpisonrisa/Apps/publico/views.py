@@ -30,6 +30,7 @@ def loginRender(request):
         print(str(username))
         print(str(passw))
         if usr.exists():
+<<<<<<< HEAD
             print("Existe")
             cursor = connection.cursor()
             cursor.execute("SELECT idtipousuario, nombresonrisero FROM usuario WHERE nombresonrisero ILIKE '"+username+"'")
@@ -37,6 +38,13 @@ def loginRender(request):
             print(idtipo)
             print(idtipo[0][0])
             print(idtipo[0][1])
+=======
+            id = Credenciales.objects.get(nombreusuario = username)
+            if id.idusuario.idtipousuario == 1:
+                return render(request, "indexVoluntario/index.html")
+            else:
+                return render(request, "indexAdministracion/index.html")
+>>>>>>> cdc087509df3c600651993b66d7fa2c3d0378789
 
             if (idtipo[0][0]==1):
                 #Voluntario
@@ -56,8 +64,13 @@ def loginRender(request):
             else:
                 print("como llegaste aqui")
         else:
+<<<<<<< HEAD
             print("NO Existe")
             message = "username o password incorrrectos"
+=======
+            message = "Nombre de Usuario o Contraseña incorrrectos"
+
+>>>>>>> cdc087509df3c600651993b66d7fa2c3d0378789
     form = LoginForm()
     context = {
         'form': form,
