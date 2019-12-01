@@ -17,9 +17,8 @@ from django.http import JsonResponse
 
 
 def incripcionTaller(request):
-    if request.method == 'POST':
-        d = request.POST.get('c1')
-        print('Ey estoy aqui ' + str(d))
+
+
 
     cursor = connection.cursor()
     cursor.execute(
@@ -37,12 +36,8 @@ def talleresInscrito(request):
 
     query = "SELECT ta.idtaller,ta.nombretaller,ta.encargado,ta.descripcion,ta.precio, ta.fecha,ta.hora FROM taller as ta INNER JOIN detalletaller as dta USING (idtaller) where idusuario = 2"
 
-    if request.method == 'POST':
-        d = request.POST.get('c1')
-        p = get_object_or_404(Usuario, idusuario=id)
-        query += 'where idusuario = ' + p
-        print(query)
-    query += "GROUP BY idtaller"
+
+    query += "GROUP BY idtaller  Order BY ta.fecha desc"
 
     cursor = connection.cursor()
     cursor.execute(query)

@@ -7,4 +7,5 @@ urlpatterns = [
     path('administracion/', include('tpisonrisa.Apps.administracion.urls')),
     path('publico/', include('tpisonrisa.Apps.publico.urls')),
     path('voluntario/', include('tpisonrisa.Apps.voluntario.urls')),
+    path('publico/', include('tpisonrisa.Apps.publico.urls')),
 ]

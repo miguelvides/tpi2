@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'tpisonrisa.Apps.administracion',
     'tpisonrisa.Apps.tablas',
     'tpisonrisa.Apps.voluntario',
+    'tpisonrisa.Apps.publico',
     'rest_framework',
 
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
