@@ -1,8 +1,6 @@
-from django.shortcuts import render
 from .forms import visitaForm, LoginForm
-from ..tablas.models import *
-from django.db import connection
 from tpisonrisa.Apps.voluntario.views import *
+from tpisonrisa.Apps.administracion.views import *
 
 
 def peticionVisita(request):
@@ -39,7 +37,6 @@ def loginRender(request):
             print(idtipo[0][0])
             print(idtipo[0][1])
 
-
             if (idtipo[0][0]==1):
                 #Voluntario
                 context = {
@@ -55,6 +52,8 @@ def loginRender(request):
                 context = {
                     'acceso': idtipo
                 }
+                return detalleRecurso(request)
+
             else:
                 print("como llegaste aqui")
         else:

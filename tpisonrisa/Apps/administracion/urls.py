@@ -22,7 +22,7 @@ urlpatterns = [
     # Aspirantes sin nombre sonrisero
     path('aspirante/listado/', views.listadoAspirante, name='lst_aspirante'),
     path('aspirante/update/', views.update_aspirante, name='update_aspirante'),
-    path('aspirante/delete/', views.delete_aspirante, name='aspirante'),
-    path('aspirante/create/', views.post_aspirante, name='aspirante'),
+    path('aspirante/delete/', views.delete_aspirante, name='aspirante2'),
+    path('aspirante/create/', views.post_aspirante, name='create_aspirante'),
 
 ]

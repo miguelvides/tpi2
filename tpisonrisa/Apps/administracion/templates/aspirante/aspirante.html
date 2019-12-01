@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <table class="table table-striped table-striped" cellspacing="0" width="100%" id="tabla">
+        <table class="table table-striped table-striped" cellspacing="0" width="100%" id="example">
             <thead>
             <tr>
                 <th>ID</th>
@@ -68,26 +68,8 @@
             $(document).ready(function () {
                 $("#edt").attr("disabled", true);
                 $("#eli").attr("disabled", true);
-                //$("#ocultar").hide();
-                $("#idEliminar").hide();
-                $("#sonrisero").prop('required', true);
-                $("#generacion").prop('required', true);
-
-                var id;
-                $("#tabla tr").click(function () {
-                    var currentRow = $(this).closest("tr");
-                    id = currentRow.find("td:eq(0)").html();
-                    console.log(id);
-                    $("#nombremortal").text(currentRow.find("td:eq(1)").html());
-                    $("#sonrisero").val("");
-                    $("#generacion").val("0");
-                    $("select#tipo")[0].selectedIndex = 0;
-                    $("select#constelacion")[0].selectedIndex = 0;
-                    $("#message").hide();
-                });
-
-
-                var table = $('#tabla').DataTable({
+                var table;
+                table = $('#example').DataTable({
                     lengthMenu: [10, 25, 50],
                     responsive: true,
                     select: {
@@ -97,67 +79,23 @@
                         url: "{% static 'datatables/Spanish.json' %}"
                     }
                 });
-
-
-                $('#tabla tbody').on('click', 'tr', function () {
+                $('#example tbody').on('click', 'tr', function () {
                     var valores = table.row(this).data();
                     console.log(valores);
+                    $("#btnEditar").removeAttr("disabled");
+                    $("#idestado").val(valores[0]);
                     if ($(this).hasClass('odd selected') || $(this).hasClass('even selected')) {
                         $("#edt").attr("disabled", true);
                         $("#eli").attr("disabled", true);
                     } else {
-                        $("#edt").attr("disabled", false);
                         $("#eli").attr("disabled", false);
-                        $("#idEliminar").val(valores[0]);
-                        $("#nombre").val(valores[1]);
+                        $("#edt").attr("disabled", false);
+                        $("#idEliminar").val(valores[0])
+                        $("#id").val(valores[0])
+                        $("#nombre").val(valores[1])
+                        $("#nombremortal").text("Nombre Mortal: "+valores[1])
                     }
                 });
-
-
-                $("#enviar").click(function () {
-                    var valores = {
-                        id: id,
-                        sonrisero: $("#sonrisero").val(),
-                        generacion: $("#generacion").val(),
-                        tipo: $("#tipo").val(),
-                        constelacion: $("#constelacion").val()
-                    }
-                    console.log(valores);
-
-                    $.ajax({
-                        url: "/administracion/aspirante/create/",
-                        type: 'post',
-                        dataType: 'json',
-                        contentType: 'application/json',
-                        data: JSON.stringify(valores),
-                        success: function (data, textStatus, xhr) {
-                            console.log(xhr.status);
-                            console.log("sucesss");
-                        },
-                        complete: function (xhr, textStatus) {
-                            console.log(xhr.status);
-                            if (xhr.status == 302) {
-                                $("#message").text("Nombre Sonrisero no disponible");
-                                console.log("Nombre Sonrisero no disponible");
-                                $("#sonrisero").val("");
-                                $("#sonrisero").focus();
-
-                            }
-                            if (xhr.status == 400) {
-                                $("#message").text("Completar formulario");
-                                console.log("Completar formulario");
-                            }
-                            if (xhr.status == 201) {
-                                $("#message").text("Elemento actualizado");
-                                console.log("Elemento actualizado");
-                            }
-                            console.log("complete");
-                        }
-
-                    });
-                    $("#message").show();
-                });
-
             });
         </script>
 
@@ -168,7 +106,7 @@
 <div id="update" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form>
+            <form method="post">{% csrf_token %}
                 <div class="modal-header">
                     <h4 class="modal-title">Agregar Voluntario</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -179,15 +117,15 @@
                     </div>
                     <div class="form-group">
                         <p>Nombre Sonrisero</p>
-                        <input type="text" id="sonrisero" name="sonrisero" class="form-control ">
+                        <input type="text" id="sonrisero" name="sonrisero" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <p>Generacion</p>
-                        <input type="number" min="0" id="generacion" class="form-control ">
+                        <input type="number" min="1" id="generacion" name="generacion" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <p>Tipo de Usuario</p>
-                        <select class="form-control" id="tipo">
+                        <select class="form-control" id="tipo" name="tipo">
                             {% for tip in tipo %}
                                 <option value="{{ tip.descripcion }}">{{ tip.descripcion }}</option>
                             {% endfor %}
@@ -195,19 +133,19 @@
                     </div>
                     <div class="form-group">
                         <p>Constelacion</p>
-                        <select class="form-control" id="constelacion">
+                        <select class="form-control" id="constelacion" name="constelacion">
                             {% for con in constelacion %}
                                 <option value="{{ con.descripcionconstelacion }}">{{ con.descripcionconstelacion }}</option>
                             {% endfor %}
                         </select>
                     </div>
                     <div class="form-group">
-                        <p id="message"></p>
+                        <input type="text" id="id" name="id" class="form-control" hidden>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                    <input type="button" id="enviar" class="btn btn-info" value="Actualizar">
+                    <input type="submit" id="enviar" name="enviar" class="btn btn-info" value="Actualizar">
                 </div>
             </form>
         </div>
@@ -225,7 +163,7 @@
                 </div>
                 <div class="modal-body">
                     <p>¿Está seguro que desea eliminar al aspirante?</p>
-                    <input type="text" id="idEliminar" name="idEliminar" class="form-control">
+                    <input type="text" id="idEliminar" name="idEliminar" class="form-control" hidden>
                     <input type="text" id="nombre" name="nombre" class="form-control" disabled>
                 </div>
                 <div class="modal-footer">
