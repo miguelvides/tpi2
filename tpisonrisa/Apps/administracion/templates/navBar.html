@@ -4,8 +4,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/administracion/aspirante/">Agregar Voluntario</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Voluntarios
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'registroAspirante' %}">Registro de aspirante</a>
+                    <a class="dropdown-item" href="{% url 'aspiranteV' %}">Aprobación de Voluntario</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'recursos' %}">Recursos</a>
