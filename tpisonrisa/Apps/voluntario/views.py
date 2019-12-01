@@ -17,8 +17,12 @@ from django.http import JsonResponse
 
 
 def incripcionTaller(request):
+    #if request.method == "POST":
+        # serializer = ListaUsuarioSerializer(cuenta, data=request.data)
+       #     u = Usuario.objects.filter(nombresonrisero__icontains=serializer.data.get('sonrisero'))
 
-
+      #  return Response({'message': 'Oops ocurrio un error'}, status=status.HTTP_400_BAD_REQUEST)
+    #return
 
     cursor = connection.cursor()
     cursor.execute(

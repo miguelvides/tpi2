@@ -25,16 +25,13 @@ def loginRender(request):
 
         if usr.exists():
             id = Credenciales.objects.get(nombreusuario = username)
-            usuario = Usuario.objects.get(idusuario = id.idusuario.idusuario)
-            if usuario.idtipousuario == 1:
-                print(username)
+            if id.idusuario.idtipousuario == 1:
                 return render(request, "indexVoluntario/index.html")
             else:
-                print(usuario.correo)
                 return render(request, "indexAdministracion/index.html")
 
         else:
-            message = "username o password incorrrectos"
+            message = "Nombre de Usuario o Contraseña incorrrectos"
 
     form = LoginForm()
     context = {
