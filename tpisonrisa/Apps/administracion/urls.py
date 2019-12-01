@@ -5,20 +5,19 @@ urlpatterns = [
 
     # path('administrador/', admin.site.urls),
     path('', views.index, name='index'),
-    path('aspirante/', views.aspirante, name='aspirante'),
+    path('aspirante/', views.aspirante, name='aspiranteV'),
     path('evento/', views.listadoEvento, name='eventos'),
     path('detalleEvento/', views.eventosVoluntarios, name='eventosVoluntarios'),
     path('detalleTaller/', views.detalleTaller, name='detalleTaller'),
     path('recursos/', views.crudRecurso, name='recursos'),
     path('registroAspirante/', views.registroAspirante, name='prueba'),
-
+    path('detalleRecursos/', views.detalleRecurso, name='detalleRecursos'),
 
     path('aspirante/<int:id>/', views.detail, name='detail'),
     path('bs/', views.boostrap, name='detail'),
 
     path('eventosDisponibles/', views.eventosDisponibles, name='eventosDisponibles'),
     path('talleresDisponibles/', views.talleresDisponibles, name='talleresDisponibles'),
-
 
     # LISTADO JSON
     # Aspirantes sin nombre sonrisero

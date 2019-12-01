@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscripcion de Taller</title>
+    {% load static %}
+
+    <script type="text/javascript" src="{% static 'DATA/jQuery-3.3.1/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'DATA/Bootstrap-4-4.1.1/js/bootstrap.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static  'DATA/Bootstrap-4-4.1.1/css/bootstrap.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'DATA/tabla.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'DATA/datatables.min.css' %}"/>
+    <script type="text/javascript" src="{% static 'DATA/datatables.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'DATA/dataTables.select.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'DATA/jquery.dataTables.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'DATA/jquery.dataTables.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'DATA/select.dataTables.min.css' %}"/>
+</head>
+
+<header>{% include "NaviBar.html" %}</header>
+<body>
+
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Mis <b>Talleres</b></h2>
+                </div>
+            </div>
+        </div>
+        <table id="example" class="table table-striped table-striped" style="width:100%">
+            <thead>
+            <tr>
+                <th>Nombre Taller</th>
+                <th>Encargado</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Cupos</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for l in lista %}
+            <tr>
+                <td>{{ l.1 }}</td>
+                <td>{{ l.2 }}</td>
+                <td>{{ l.3 }}</td>
+                <td>{{ l.4 }}</td>
+                <td>{{ l.5 }}</td>
+                <td>{{ l.6 }}</td>
+                <td>{{ l.7 }}</td>
+
+            {% empty %}
+                <li>Disculpa, no hay taller.</li>
+            {% endfor %}
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th>Nombre Taller</th>
+                <th>Encargado</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Cupos</th>
+            </tr>
+            </tfoot>
+
+        </table>
+    </div>
+</div>
+
+<script>
+ $(document).ready(function () {
+        table = $('#example').DataTable({
+            lengthMenu: [10, 25, 50],
+            responsive: true,
+
+            select: {
+                style: 'single'
+            },
+            language: {
+                url: "{% static 'datatables/Spanish.json' %}"
+            }
+        });
+
+    });
+
+</script>
+</body>
+</html>
