@@ -217,8 +217,8 @@ class Peticionvisita(models.Model):
 class Recursosonriseros(models.Model):
     idrecurso = models.AutoField(primary_key=True)
     nombrerecurso = models.CharField(max_length=50)
-    talla = models.CharField(max_length=5, blank=True, null=True)
-    preciorecurso = models.DecimalField(max_digits=2, decimal_places=2)
+    talla = models.CharField(max_length=50, blank=True, null=True)
+    preciorecurso = models.FloatField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -244,6 +244,7 @@ class Taller(models.Model):
     hora = models.TimeField(blank=True, null=True)
     precio = models.TextField(blank=True, null=True)
     encargado = models.TextField(blank=True, null=True)
+    max = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = False
