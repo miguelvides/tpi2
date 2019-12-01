@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+    <list default="true" id="92678044-5c35-4383-897e-690f8ff539af" name="Default Changelist" comment="Formato de Tablas">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     <list default="true" id="92678044-5c35-4383-897e-690f8ff539af" name="Default Changelist" comment="">
-<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/navBar.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/recursos/detalleRecurso.html" afterDir="false" />
-=======
       <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/voluntario/serializers.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/voluntario/static/DATA/Bootstrap-4-4.1.1/css/bootstrap.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/voluntario/static/DATA/Bootstrap-4-4.1.1/css/bootstrap.css.map" afterDir="false" />
@@ -202,12 +202,10 @@
       <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/voluntario/templates/taller/tallerInscrito.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tpisonrisa/Apps/voluntario/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
->>>>>>> d92a399d8490e4de4917fb0bc2cc899320616269
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/tabla.css" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/static/DATA/tabla.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/aspirante/aspirante.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/aspirante/aspirante.html" afterDir="false" />
-<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/aspirante/eventoAspirantes.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/aspirante/eventoAspirantes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/recursos/recursos.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/recursos/recursos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/taller/detalleTaller.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/templates/taller/detalleTaller.html" afterDir="false" />
@@ -216,10 +214,9 @@
       <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/administracion/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/tablas/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/tablas/models.py" afterDir="false" />
-=======
+
       <change beforePath="$PROJECT_DIR$/tpisonrisa/Apps/voluntario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/Apps/voluntario/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpisonrisa/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpisonrisa/urls.py" afterDir="false" />
->>>>>>> d92a399d8490e4de4917fb0bc2cc899320616269
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -252,15 +249,26 @@
       <list>
         <option value="CSS File" />
         <option value="Python Script" />
-<<<<<<< HEAD
-=======
         <option value="CSS File" />
->>>>>>> d92a399d8490e4de4917fb0bc2cc899320616269
+
         <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/taller" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
         <option value="kernel503 &lt;juanko682@gmail.com&gt;" />
@@ -271,6 +279,7 @@
   <component name="ProjectId" id="1T7lkRDWwRj6CQ3JO0E1Zs6iS08" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
