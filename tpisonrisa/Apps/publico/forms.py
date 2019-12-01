@@ -30,3 +30,9 @@ class visitaForm(forms.ModelForm):
                 attrs={'type': 'time', 'id': 'hora', 'min':'08:00', 'max':'18:00','class': 'form-control'}
             )
         }
+
+
+#-------------------------LOGIN---------------------
+class LoginForm(forms.Form):
+   username = forms.CharField( max_length=10,widget=forms.TextInput(attrs={'type':'input', 'class':'form-control', 'id':'InputUserName', 'placeholder':'Nombre de Usuario'}))
+   password = forms.CharField( max_length=35 , widget= forms.PasswordInput(attrs={'type':'password' , "class" :'form-control', 'id': 'inputPassword', 'placeholder': 'Password'}))
