@@ -6,7 +6,6 @@ from rest_framework import status
 from rest_framework.response import Response
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
-from django.http import Http404
 from django.db import connection
 from django.http import JsonResponse
 
