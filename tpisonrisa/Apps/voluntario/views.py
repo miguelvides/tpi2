@@ -21,12 +21,10 @@ def incripcionTaller(request):
         # serializer = ListaUsuarioSerializer(cuenta, data=request.data)
        #     u = Usuario.objects.filter(nombresonrisero__icontains=serializer.data.get('sonrisero'))
 
-<<<<<<< HEAD
-=======
+
       #  return Response({'message': 'Oops ocurrio un error'}, status=status.HTTP_400_BAD_REQUEST)
     #return
 
->>>>>>> cdc087509df3c600651993b66d7fa2c3d0378789
     cursor = connection.cursor()
     cursor.execute(
         "SELECT ta.idtaller,ta.nombretaller,ta.encargado,ta.descripcion,ta.precio, ta.fecha,ta.hora,ta.max - count(dta.idusuario) as CuposDisponibles, count(dta.idusuario) as cupos, ta.max"

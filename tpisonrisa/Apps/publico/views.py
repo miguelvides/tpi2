@@ -33,7 +33,7 @@ def loginRender(request):
         if usr.exists():
             print("Existe")
             cursor = connection.cursor()
-            cursor.execute("SELECT idtipousuario, nombresonrisero FROM usuario WHERE nombresonrisero ILIKE '"+username+"'")
+            cursor.execute("SELECT idtipousuario, nombresonrisero, idusuario FROM usuario WHERE nombresonrisero ILIKE '"+username+"'")
             idtipo = cursor.fetchall()
             print(idtipo)
             print(idtipo[0][0])
@@ -45,12 +45,12 @@ def loginRender(request):
                 context = {
                     'acceso': idtipo
                 }
-                request.session['id'] = idtipo[0][0]
+                request.session['id'] = idtipo[0][2]
                 request.session['nombre'] = idtipo[0][1]
                 return vol(request)
             elif (idtipo[0][0]>=2 and idtipo[0][0]<=4):
                 # Administradores
-                request.session['id'] = idtipo[0][0]
+                request.session['id'] = idtipo[0][2]
                 request.session['nombre'] = idtipo[0][1]
                 context = {
                     'acceso': idtipo
