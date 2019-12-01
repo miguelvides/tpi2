@@ -8,3 +8,6 @@ def peticionVisita(request):
             form.save()
     form = visitaForm()
     return render(request, 'publico/peticionVisita.html', {'form': form})
+
+def inicio(request):
+    return render(request, 'publico/index.html')

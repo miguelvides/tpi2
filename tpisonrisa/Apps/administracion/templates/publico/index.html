@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fábrica de Sonrisas</title>
+    {% load static %}
+
+    <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static  'solmusic/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'solmusic/css/font-awesome.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'solmusic/css/owl.carousel.min.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'solmusic/css/slicknav.min.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'solmusic/css/style.css' %}"/>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+	<header class="header-section clearfix">
+		<a href="#" class="site-logo">
+			<img src="{% static 'favicon/logo.jpg' %}" alt="">
+		</a>
+		<div class="header-right">
+			<div class="user-panel">
+				<a href="#" class="login">Login</a>
+				<a href="{% url 'peticionVisita' %}" class="register">¡Solicita tu visita!</a>
+			</div>
+		</div>
+		<ul class="main-menu">
+			<li><a href="{% url 'inicio' %}">Home</a></li>
+			<li><a href="{% url 'aspiranteV' %}">Administración</a></li>
+			<li><a href="{% url 'talleresInscrito' %}">Voluntarios</a></li>
+		</ul>
+	</header>
+
+
+	<section class="intro-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="section-title">
+						<h2>Fabrica de Sonrisas</h2>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<p>Fábrica de Sonrisas es un voluntariado sin fines de lucro, sin tinte político o religioso, que tiene como visión mejorar el nivel psicoemocional de los pacientes que visitamos en distintos centros, a través de la RISOTERAPIA. Nuestra misión es ser felices, contagiar las ganas de vivir y la alegría, y lo más importante, regalarle una sonrisa a todos. No sólo somos doctores y no sólo somos jóvenes, Fábrica de Sonrisas incluye también adultos y veteranos.</p>
+					<a href="{% url 'peticionVisita' %}" class="site-btn">Solicita tu visita</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<footer class="footer-section">
+		<div class="container">
+			<img src="{% static 'favicon/banner.jpg' %}">
+			<hr>
+			<div class="social-links">
+						<a href="https://www.instagram.com/fds_elsalvador/"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.facebook.com/fds.elsalvador/"><i class="fa fa-facebook"></i></a>
+						<a href="https://twitter.com/FDS_ElSalvador"><i class="fa fa-twitter"></i></a>
+						<a href="https://www.youtube.com/user/FDSGuatemala"><i class="fa fa-youtube"></i></a>
+			</div>
+		</div>
+</footer>
+
+</body>
+</html>
