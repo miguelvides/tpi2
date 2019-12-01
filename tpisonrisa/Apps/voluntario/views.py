@@ -60,8 +60,21 @@ def detalleVisita(request):
     }
     return render(request, 'Recursos/DetalleVisita.html', context)
 
-   
 
+def peticionvisita(request):
+    if request.method =='POST':
+        id =request.POST.get('idestado')
+        Detallevisita.objects.filter(idtaller=id)
+        cursor = connection.cursor()
+        cursor.execute("SELECT pe.idpeticionvisita, pe.fechavisita, pe.horavisita, pe.entidad, pe.lugardevisita, pe.descripcion,u.descripcionestado "
+                  "FROM peticionvisita AS pe INNER JOIN estado AS u USING (idestado)")
+                  
+        lista=cursor.fetchall()
+        cursor.close()
+        context={
+        'lista': lista
+        }
+    return render("request, ''Recursos/PeticionVisita.html", context)
 
 
 
