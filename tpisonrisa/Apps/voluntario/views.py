@@ -77,4 +77,21 @@ def peticionvisita(request):
     return render(request, 'Recursos/PeticionVisita.html', context)
 
 
+def solicitudrecurso(request):
+    if request.method == 'POST':
+        id = request.POST.get('idestado')
+        SolicitudRecurso.objects.filter(idsolicitudrecurso=id)
+
+    cursor = connection.cursor()
+    cursor.execute("SELECT s.idsolicitudrecurso, r.nombrerecurso, r.talla, r.preciorecurso, u.nombresonrisero, s.pago "
+        "FROM solicitudrecurso AS s INNER JOIN recursosonriseros AS r on (recursosonrisero=idrecurso)"
+        "INNER JOIN usuario AS u USING (idusuario)")
+
+    lista = cursor.fetchall()
+    cursor.close()
+    context = {
+        'lista': lista
+    }
+    return render(request, 'Recursos/SolicitudRecurso.html', context)
+
 
