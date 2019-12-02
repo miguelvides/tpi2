@@ -16,9 +16,25 @@
     <link rel="stylesheet" type="text/css" href="{% static 'DATA/select.dataTables.min.css' %}"/>
 </head>
 
-<body>
-{% for l in acceso %}
-<p>{{ l.0 }} - {{ l.1 }}</p>
-{% endfor %}
-</body>
+
+<header>{% include "NaviBar.html" %}</header>
+
+    <body>
+    <div>
+        <h1>Bienvenido</h1>
+
+    </div>
+    <footer >
+        <div class="container">
+            <hr>
+            <div class="social-links">
+                <a href="https://www.instagram.com/fds_elsalvador/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/fds.elsalvador/"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/FDS_ElSalvador"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.youtube.com/user/FDSGuatemala"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    </body>
+
 </html>
