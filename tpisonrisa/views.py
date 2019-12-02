@@ -16,4 +16,4 @@ def index(request):
         'tipo': tipo,
         'constelacion': constelacion
     }
-    return render(request, 'indice.html', context)
+    return render(request, 'indice2.html', context)
