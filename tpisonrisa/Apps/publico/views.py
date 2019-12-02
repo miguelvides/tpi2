@@ -36,7 +36,8 @@ def loginRender(request):
                 }
                 request.session['id'] = idtipo[0][2]
                 request.session['nombre'] = idtipo[0][1]
-                return talleresInscrito(request)
+                return redirect('/voluntario/talleresInscrito/')
+                #return talleresInscrito(request)
             elif (idtipo[0][0]>=2 and idtipo[0][0]<=4):
                 # Administradores
                 request.session['id'] = idtipo[0][2]
@@ -44,7 +45,8 @@ def loginRender(request):
                 context = {
                     'acceso': idtipo
                 }
-                return detalleRecurso(request)
+                return redirect('/administracion/registroAspirante/')
+                #return detalleRecurso(request)
 
             else:
                 print("como llegaste aqui")
