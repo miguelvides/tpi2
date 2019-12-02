@@ -64,6 +64,7 @@ def vol(request):
     except KeyError:
         pass
         return HttpResponse("You're logged out.")
+<<<<<<< HEAD
     return render(request, "NaviBar.html", context=context)
 
 def peticionRecurso(request):
@@ -96,3 +97,6 @@ def peticionRecurso(request):
         'lista2': lista2,
     }
     return render(request, 'recurso/peticionRecurso.html', context)
+=======
+    return render(request, "indexVoluntario/index.html", context=context)
+>>>>>>> f38763a750da76ee790eb454a9382d766f186221

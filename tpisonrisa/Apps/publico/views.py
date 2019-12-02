@@ -36,7 +36,7 @@ def loginRender(request):
                 }
                 request.session['id'] = idtipo[0][2]
                 request.session['nombre'] = idtipo[0][1]
-                return vol(request)
+                return talleresInscrito(request)
             elif (idtipo[0][0]>=2 and idtipo[0][0]<=4):
                 # Administradores
                 request.session['id'] = idtipo[0][2]
