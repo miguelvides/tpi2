@@ -17,14 +17,20 @@ from django.http import JsonResponse
 
 
 def incripcionTaller(request):
-    #if request.method == "POST":
-        # serializer = ListaUsuarioSerializer(cuenta, data=request.data)
-       #     u = Usuario.objects.filter(nombresonrisero__icontains=serializer.data.get('sonrisero'))
 
+    try:
+        id = request.session.get('id')
+        nombre = request.session.get('nombre')
+    except KeyError:
+        pass
+        return HttpResponse("You're logged out.")
 
-      #  return Response({'message': 'Oops ocurrio un error'}, status=status.HTTP_400_BAD_REQUEST)
-    #return
-
+    if request.method == "POST":
+        id = request.session.get('id')
+        usuario = Usuario.objects.get(idusuario = id)
+        idtaller = request.POST.get('idtaller')
+        taller = Taller.objects.get(idtaller = idtaller)
+        Detalletaller(idusuario=usuario, idtaller = taller).save()
     cursor = connection.cursor()
     cursor.execute(
         "SELECT ta.idtaller,ta.nombretaller,ta.encargado,ta.descripcion,ta.precio, ta.fecha,ta.hora,ta.max - count(dta.idusuario) as CuposDisponibles, count(dta.idusuario) as cupos, ta.max"
@@ -32,14 +38,25 @@ def incripcionTaller(request):
     lista = cursor.fetchall()
     cursor.close()
     context = {
+        'id': id,
+        'nombre': nombre,
         'lista': lista
     }
     return render(request, 'taller/inscripcionTaller.html', context)
 
 
 def talleresInscrito(request):
-    query = "SELECT ta.idtaller,ta.nombretaller,ta.encargado,ta.descripcion,ta.precio, ta.fecha,ta.hora FROM taller as ta INNER JOIN detalletaller as dta USING (idtaller) where idusuario = 2"
-    query += "GROUP BY idtaller  Order BY ta.fecha desc"
+    if 'Eliminar' in request.POST:
+        id = request.session.get('id')
+        usuario = Usuario.objects.get(idusuario = id)
+        idtaller = request.POST.get('idtaller')
+        taller = Taller.objects.get(idtaller=idtaller)
+        Detalletaller.objects.filter(idusuario=usuario,idtaller=taller).delete()
+
+
+    id = request.session.get('id')
+    query = "SELECT ta.idtaller,ta.nombretaller,ta.encargado,ta.descripcion,ta.precio, ta.fecha,ta.hora FROM taller as ta INNER JOIN detalletaller as dta USING (idtaller) where idusuario ="+ str(id)
+    query += " GROUP BY idtaller  Order BY ta.fecha desc"
 
     cursor = connection.cursor()
     cursor.execute(query)
