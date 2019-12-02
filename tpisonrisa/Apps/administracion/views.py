@@ -84,7 +84,7 @@ def eventosVoluntarios(request):
         "SELECT p.lugardevisita, p.horavisita, p.fechavisita, p.descripcion ,u.nombresonrisero, es.descripcionestado, es.idestado "
         "FROM detallevisita as d INNER JOIN usuario as u "
         "USING(idusuario) INNER JOIN peticionvisita as p "
-        "USING(idpeticionvisita) INNER JOIN estado as es USING (idestado) ORDER BY p.lugardevisita ASC")
+        "USING(idpeticionvisita) INNER JOIN estado as es USING (idestado) WHERE es.idestado < 4 ORDER BY p.lugardevisita ASC")
     lista = cursor.fetchall()
     cursor.close()
     context = {
