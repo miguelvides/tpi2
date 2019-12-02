@@ -4,11 +4,12 @@ from .serializers import *
 from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.db import connection
 from django.http import JsonResponse
 from .forms import registroForm
+from django.contrib.auth import logout as logout_django
 
 
 @api_view(['GET', ])
@@ -265,3 +266,8 @@ def detalleRecurso(request):
         'lista': lista
     }
     return render(request, 'recursos/detalleRecurso.html', context)
+
+def logout(request):
+    logout_django(request)
+
+    return redirect('http://localhost:8000')

@@ -17,6 +17,7 @@ urlpatterns = [
 
     path('eventosDisponibles/', views.eventosDisponibles, name='eventosDisponibles'),
     path('talleresDisponibles/', views.talleresDisponibles, name='talleresDisponibles'),
+    path('logout/', views.logout, name='logout'),
 
     # LISTADO JSON
     # Aspirantes sin nombre sonrisero
