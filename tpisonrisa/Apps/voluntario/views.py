@@ -17,8 +17,13 @@ from django.http import JsonResponse
 
 
 def incripcionTaller(request):
+    #if request.method == "POST":
+        # serializer = ListaUsuarioSerializer(cuenta, data=request.data)
+       #     u = Usuario.objects.filter(nombresonrisero__icontains=serializer.data.get('sonrisero'))
 
 
+      #  return Response({'message': 'Oops ocurrio un error'}, status=status.HTTP_400_BAD_REQUEST)
+    #return
 
     cursor = connection.cursor()
     cursor.execute(
@@ -33,10 +38,7 @@ def incripcionTaller(request):
 
 
 def talleresInscrito(request):
-
     query = "SELECT ta.idtaller,ta.nombretaller,ta.encargado,ta.descripcion,ta.precio, ta.fecha,ta.hora FROM taller as ta INNER JOIN detalletaller as dta USING (idtaller) where idusuario = 2"
-
-
     query += "GROUP BY idtaller  Order BY ta.fecha desc"
 
     cursor = connection.cursor()
@@ -48,4 +50,15 @@ def talleresInscrito(request):
     }
     return render(request, 'taller/tallerInscrito.html', context)
 
-
+def vol(request):
+    try:
+        id = request.session.get('id')
+        nombre = request.session.get('nombre')
+        context ={
+            'id': id,
+            'nombre': nombre
+        }
+    except KeyError:
+        pass
+        return HttpResponse("You're logged out.")
+    return render(request, "NaviBar.html", context=context)

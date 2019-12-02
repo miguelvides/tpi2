@@ -72,6 +72,7 @@ def post_aspirante(request):
             else:
                 Usuario.objects.filter(idusuario=serializer.data.get('id')).update(
                     nombresonrisero=serializer.data.get('sonrisero'), idtipousuario=t, idconstelacion=c)
+                #Credenciales(nombreusuario=serializer.data.get('sonrisero'), contrasena='1234')
                 return Response({'message': 'Elemento Actualizado'}, status=status.HTTP_201_CREATED)
             print(serializer)
         return Response({'message': 'Oops ocurrio un error'}, status=status.HTTP_400_BAD_REQUEST)
@@ -83,7 +84,7 @@ def eventosVoluntarios(request):
         "SELECT p.lugardevisita, p.horavisita, p.fechavisita, p.descripcion ,u.nombresonrisero, es.descripcionestado, es.idestado "
         "FROM detallevisita as d INNER JOIN usuario as u "
         "USING(idusuario) INNER JOIN peticionvisita as p "
-        "USING(idpeticionvisita) INNER JOIN estado as es USING (idestado) ORDER BY p.lugardevisita ASC")
+        "USING(idpeticionvisita) INNER JOIN estado as es USING (idestado) WHERE es.idestado < 4 ORDER BY p.lugardevisita ASC")
     lista = cursor.fetchall()
     cursor.close()
     context = {
@@ -162,6 +163,17 @@ def aspirante(request):
     if 'Eliminar' in request.POST:
         id = request.POST.get('idEliminar')
         Usuario.objects.filter(idusuario=id).delete()
+    if 'enviar' in request.POST:
+        u = Usuario.objects.filter(nombresonrisero__icontains=request.POST.get('sonrisero'))
+        t = Tipousuario.objects.get(descripcion=request.POST.get('tipo'))
+        c = Constelacion.objects.get(descripcionconstelacion=request.POST.get('constelacion'))
+        if u.exists():
+            print("NO se puede")
+        else:
+            Usuario.objects.filter(idusuario=request.POST.get('id')).update(nombresonrisero=request.POST.get('sonrisero'), idtipousuario=t, idconstelacion=c, generacion=request.POST.get('generacion'))
+            u2 = Usuario.objects.get(
+                nombresonrisero__icontains=request.POST.get('sonrisero'))
+            Credenciales(idusuario=u2, nombreusuario=request.POST.get('sonrisero'), contrasena='1234').save()
 
     filtro = Usuario.objects.filter(nombresonrisero__isnull=True)
     constelacion = Constelacion.objects.all().order_by('idconstelacion')

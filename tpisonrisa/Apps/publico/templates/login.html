@@ -72,11 +72,25 @@
             </div>
             <button type="submit" class="btn btn-primary">Ingresar</button>
         </form>
+        {% if message %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="incorrecto">
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <strong>{{ message }}</strong> Intenta nuevamente.
+        </div>
+        {% endif %}
 </div>
 
-	{% if message %}
- 	<p> {{ message }} </p>
-     {% endif %}
+
 	</section></center>
 </body>
+<script>
+$(document).ready(function(){
+  $(".close").click(function(){
+    $("#incorrecto").alert("close");
+  });
+});
+</script>
+
 </html>
