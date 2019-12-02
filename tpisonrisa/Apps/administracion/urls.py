@@ -17,6 +17,7 @@ urlpatterns = [
 
     path('eventosDisponibles/', views.eventosDisponibles, name='eventosDisponibles'),
     path('talleresDisponibles/', views.talleresDisponibles, name='talleresDisponibles'),
+    path('crearTaller/', views.crearTaller, name='crearTaller'),
     path('logout/', views.logout, name='logout'),
 
     # LISTADO JSON

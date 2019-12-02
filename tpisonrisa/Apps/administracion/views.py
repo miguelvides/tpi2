@@ -10,7 +10,7 @@ from django.db import connection
 from django.http import JsonResponse
 from .forms import registroForm
 from django.contrib.auth import logout as logout_django
-
+from datetime import date
 
 @api_view(['GET', ])
 def listadoAspirante(request):
@@ -269,5 +269,36 @@ def detalleRecurso(request):
 
 def logout(request):
     logout_django(request)
-
     return redirect('http://localhost:8000')
+
+def crearTaller(request):
+    if 'agregar' in request.POST:
+        c1 = request.POST.get('1')
+        c2 = request.POST.get('2')
+        c3 = request.POST.get('3')
+        c4 = request.POST.get('4')
+        c5 = request.POST.get('5')
+        c6 = request.POST.get('6')
+        c7 = request.POST.get('7')
+        print(c3)
+        print(c4)
+        Taller(nombretaller=c1, descripcion=c2, fecha=c3, hora=c4, precio=c5, encargado=c6, max=c7).save()
+    if 'editar' in request.POST:
+        c1 = request.POST.get('1')
+        c2 = request.POST.get('2')
+        c3 = request.POST.get('3')
+        c4 = request.POST.get('4')
+        c5 = request.POST.get('5')
+        c6 = request.POST.get('6')
+        c7 = request.POST.get('7')
+        c8 = request.POST.get('8')
+        Taller.objects.filter(idtaller=c8).update(nombretaller=c1, descripcion=c2, fecha=c3, hora=c4, precio=c5, encargado=c6, max=c7)
+    if 'Eliminar' in request.POST:
+        c8 = request.POST.get('idEliminar')
+        Taller.objects.filter(idtaller=c8).delete()
+
+    lista = Taller.objects.all()
+    context = {
+        'lista':lista,
+    }
+    return render(request, 'taller/crearTaller.html', context)
