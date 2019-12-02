@@ -1,23 +1,9 @@
-from django.shortcuts import render
 from django.http import HttpResponse
-from tpisonrisa.Apps.tablas.models import *
 from .serializers import *
-from rest_framework.decorators import api_view
-from rest_framework import status
-from rest_framework.response import Response
-from django.shortcuts import render, get_object_or_404
-from django.contrib import messages
-from django.http import Http404
+from django.shortcuts import render
 from django.db import connection
-from django.http import JsonResponse
-
-
-# Create your views here.
-
-
 
 def incripcionTaller(request):
-
     try:
         id = request.session.get('id')
         nombre = request.session.get('nombre')
@@ -79,3 +65,34 @@ def vol(request):
         pass
         return HttpResponse("You're logged out.")
     return render(request, "NaviBar.html", context=context)
+
+def peticionRecurso(request):
+    id2 = request.session.get('id')
+    if 'agregar' in request.POST:
+        id = request.POST.get('id')
+        Solicitudrecurso(idusuario=Usuario.objects.get(idusuario=id2), recursosonrisero=Recursosonriseros.objects.get(idrecurso=id)).save()
+        print("agregado")
+
+    if 'eliminar' in request.POST:
+        idEliminar = request.POST.get('eid')
+        Solicitudrecurso.objects.filter(idsolicitudrecurso=idEliminar).delete()
+
+
+    cursor = connection.cursor()
+    cursor.execute("SELECT so.idsolicitudrecurso, us.nombresonrisero, re.nombrerecurso, re.talla, so.pago "
+                   "FROM solicitudrecurso AS so "
+                   "INNER JOIN recursosonriseros AS re ON so.recursosonrisero = re.idrecurso "
+                   "INNER JOIN usuario AS us USING(idusuario) WHERE us.idusuario = "+str(id2))
+    lista = cursor.fetchall()
+    cursor.close()
+
+    cursor2 = connection.cursor()
+    cursor2.execute("SELECT * FROM recursosonriseros")
+    lista2 = cursor2.fetchall()
+    cursor2.close()
+
+    context = {
+        'lista': lista,
+        'lista2': lista2,
+    }
+    return render(request, 'recurso/peticionRecurso.html', context)
